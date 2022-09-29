@@ -1,7 +1,7 @@
 ---
 layout: post
 title: THM — HackPark
-date: 2022-09-29 13:00:00 -500
+date: 2022-09-29 00:00:00 -500
 categories: [TryHackMe]
 tags: [Hydra]
 ---
@@ -27,7 +27,6 @@ We can see that there is an HTTP service on port 80, then we open `10.10.205.86:
 
 There we are interested in the login page. Inspecting the login form we can find out that it's using POST request type.
 
-<img src="assets/images/HackPark/1.png" alt="drawing" width="200"/>
 
 ![Inspecting the site](/assets/images/HackPark/1.png)
 
