@@ -44,11 +44,11 @@ social:
   email: vladivius@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    # - https://twitter.com/username      # change to your twitter homepage
+    # https://twitter.com/username      # change to your twitter homepage
     - https://github.com/Simpuar     # change to your github homepage
     # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-     - https://www.linkedin.com/in/simpuar
+    # https://www.facebook.com/username
+    - https://www.linkedin.com/in/simpuar
 
 google_site_verification:               # fill in to your verification string
 
