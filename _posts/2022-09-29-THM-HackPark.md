@@ -27,7 +27,9 @@ We can see that there is an HTTP service on port 80, then we open `10.10.205.86:
 
 There we are interested in the login page. Inspecting the login form we can find out that it's using POST request type.
 
-<img src="1.png" alt="Inspecting the site" />
+<img src="assets/images/HackPark/1.png" alt="drawing" width="200"/>
+
+![Inspecting the site](/assets/images/HackPark/1.png)
 
 Moreover, the url of the login page is the following: `http://10.10.205.86/Account/login.aspx?ReturnURL=/admin/`.
 
@@ -96,7 +98,7 @@ So, the password is `1qaz2wsx`.
 
 After logging into admin account we can find the blogengine version: `3.3.6.0`.
 
-![Blogengine about page](2.png)
+![Blogengine about page](/assets/images/HackPark/2.png)
 
 Searching on exploit-db, we can find the [vulnerability](https://www.exploit-db.com/exploits/46353). CVE-2019-6714. Download the script.
 
