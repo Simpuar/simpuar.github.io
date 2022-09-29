@@ -99,8 +99,8 @@ GEM
     yell (2.2.2)
 
 PLATFORMS
-  arm64-darwin-21
   x86_64-linux
+  arm64-darwin-21
 
 DEPENDENCIES
   html-proofer (~> 3.18)
