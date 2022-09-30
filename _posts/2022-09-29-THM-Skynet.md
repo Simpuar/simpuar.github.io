@@ -3,7 +3,7 @@ layout: post
 title: THM — Skynet
 date: 2022-09-29 02:00:00 -500
 categories: [TryHackMe]
-tags: [Samba, Burp Suite]
+tags: [Samba, Burp Suite, Gobuster]
 ---
 
 <img src="/assets/images/Skynet/logo.png" alt="Skynet Logo" width="30%">

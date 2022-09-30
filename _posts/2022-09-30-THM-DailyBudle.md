@@ -3,7 +3,7 @@ layout: post
 title: THM — Daily Bugle
 date: 2022-09-30 00:00:00 -500
 categories: [TryHackMe]
-tags: [SQLi, Gobuster]
+tags: [Gobuster]
 ---
 
 <img src="/assets/images/THM/Daily%20Bugle/logo.png" alt="Daily Bugle Logo" width="30%">
@@ -236,7 +236,7 @@ I didn't find any shells or something like that, so went to Google with `Joomla 
 
 ***
 
-## <strong><font color="#34A5DA">Privilege Escalatio</font></strong>
+## <strong><font color="#34A5DA">Privilege Escalation</font></strong>
 
 Several tools can help you save time during the enumeration process. These tools should only be used to save time knowing they may miss some privilege escalation vectors. Below is a list of popular Linux enumeration tools with links to their respective Github repositories.
 
