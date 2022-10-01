@@ -52,8 +52,6 @@ Simple SQLi does not work and there are no information about what version of Joo
 Let's use Gobuster to find other subpages:
 
 ```console
-vladislav@Mac ~ % gobuster dir -u http://10.10.148.251 -w dsstorewordlist.txt
-Error: error on parsing arguments: wordlist file "dsstorewordlist.txt" does not exist: stat dsstorewordlist.txt: no such file or directory
 vladislav@Mac ~ % gobuster dir -u http://10.10.148.251 -w share/wordlists/dirs/dsstorewordlist.txt
 ===============================================================
 Gobuster v3.1.0
