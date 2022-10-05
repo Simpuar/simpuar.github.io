@@ -3,7 +3,7 @@ layout: post
 title: THM — Game Zone
 date: 2022-09-29 01:00:00 -500
 categories: [TryHackMe]
-tags: [SQLi, SQLMap, JohnTheRipper]
+tags: [SQLi, SQLMap, JohnTheRipper, SSH Tunnel]
 ---
 
 <img src="/assets/images/GameZone/logo.png" alt="GameZone Logo" width="30%">

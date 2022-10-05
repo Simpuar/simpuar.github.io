@@ -3,7 +3,7 @@ layout: post
 title: THM — Overpass 2 — Hacked
 date: 2022-10-01 00:00:00 -500
 categories: [TryHackMe]
-tags: [Wireshark]
+tags: [Wireshark, Linux, Forensics]
 ---
 
 <img src="/assets/images/THM/Overpass%202%20—%20Hacked/logo.png" alt="THM — Overpass 2 — Hacked — Logo" width="30%">

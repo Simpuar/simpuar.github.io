@@ -3,7 +3,7 @@ layout: post
 title: THM — HackPark
 date: 2022-09-29 00:00:00 -500
 categories: [TryHackMe]
-tags: [Hydra, winPEAS]
+tags: [Hydra, winPEAS, Windows, RCE]
 ---
 
 <img src="/assets/images/HackPark/logo.png" alt="HackPark Logo" width="30%">
