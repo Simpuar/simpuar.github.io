@@ -3,7 +3,7 @@ layout: post
 title: THM — Lateral Movement and Pivoting
 date: 2022-10-26 00:00:00 -500
 categories: [TryHackMe]
-tags: [Active Directory, Windows, mimikatz]
+tags: [Active Directory, Windows, Mimikatz]
 ---
 
 <img src="/assets/images/THM/Lateral%20Movement%20and%20Pivoting/logo.png" width="20%">
