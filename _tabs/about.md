@@ -12,7 +12,7 @@ order: 4
 
 > ## <strong><font color="#34A5DA">Licenses & Certifications</font></strong>
 > * <font color="DarkGray"><a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-V1YHNUGYUZ.png">TryHackMe: Jr Penetration Tester</a></font>
-> * <font color="DarkGray"><a href="">TryHackMe: Offensive Pentesting</a></font>
+> * <font color="DarkGray"><a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-NLG44KMKJC.png">TryHackMe: Offensive Pentesting</a></font>
 > * <font color="DarkGray"><a href="https://stepik.org/certificate/e1a5dcd921b88e6de7702ce72c3d186f9457ec65.pdf">VK Team: Security Analysis of Web Projects</a></font>
 
 
